@@ -1,0 +1,707 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.7.1",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": true
+    }
+  },
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".github/workflows/cd-infra.yml",
+        "hash": "1239606779743105351"
+      },
+      {
+        "file": ".github/workflows/ci-api.yml",
+        "hash": "17202637207443579203"
+      },
+      {
+        "file": ".github/workflows/ci-mobile.yml",
+        "hash": "15815415694395626375"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "1635257150428081737"
+      },
+      {
+        "file": "Makefile",
+        "hash": "14553989062219146765"
+      },
+      {
+        "file": "README.md",
+        "hash": "5010420576296204788"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "1752662711904841076"
+      },
+      {
+        "file": "infra/backend.tf",
+        "hash": "6158964334147141185"
+      },
+      {
+        "file": "infra/main.tf",
+        "hash": "12612372572781301332"
+      },
+      {
+        "file": "infra/outputs.tf",
+        "hash": "1448857662856708425"
+      },
+      {
+        "file": "infra/variables.tf",
+        "hash": "1691590693403308443"
+      },
+      {
+        "file": "nx.json",
+        "hash": "9563840705294506334"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "17069311443816715202"
+      },
+      {
+        "file": "package.json",
+        "hash": "15177016914492061073"
+      }
+    ],
+    "projectFileMap": {
+      "mobile": [
+        {
+          "file": "apps/mobile/.gitignore",
+          "hash": "16245390046585444046"
+        },
+        {
+          "file": "apps/mobile/.metadata",
+          "hash": "9260246237273015837"
+        },
+        {
+          "file": "apps/mobile/README.md",
+          "hash": "1189267721491532022"
+        },
+        {
+          "file": "apps/mobile/analysis_options.yaml",
+          "hash": "3650987223333083373"
+        },
+        {
+          "file": "apps/mobile/android/.gitignore",
+          "hash": "2133581420894265675"
+        },
+        {
+          "file": "apps/mobile/android/app/build.gradle.kts",
+          "hash": "13274911141877012186"
+        },
+        {
+          "file": "apps/mobile/android/app/src/debug/AndroidManifest.xml",
+          "hash": "2424010824173831934"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/AndroidManifest.xml",
+          "hash": "8913606542430728450"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/kotlin/com/example/mobile/MainActivity.kt",
+          "hash": "10327977872215756246"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/drawable-v21/launch_background.xml",
+          "hash": "4986171810521098768"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/drawable/launch_background.xml",
+          "hash": "750324681697267716"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+          "hash": "17515915797888911451"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+          "hash": "12758156220368008677"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+          "hash": "17821057072759496051"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+          "hash": "13291011583500627668"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+          "hash": "10239208634629745166"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/values-night/styles.xml",
+          "hash": "1856035890191000928"
+        },
+        {
+          "file": "apps/mobile/android/app/src/main/res/values/styles.xml",
+          "hash": "315751654984603465"
+        },
+        {
+          "file": "apps/mobile/android/app/src/profile/AndroidManifest.xml",
+          "hash": "2424010824173831934"
+        },
+        {
+          "file": "apps/mobile/android/build.gradle.kts",
+          "hash": "10522368085196947188"
+        },
+        {
+          "file": "apps/mobile/android/gradle.properties",
+          "hash": "13606000082584420375"
+        },
+        {
+          "file": "apps/mobile/android/gradle/wrapper/gradle-wrapper.properties",
+          "hash": "7908644964105943625"
+        },
+        {
+          "file": "apps/mobile/android/settings.gradle.kts",
+          "hash": "4221693513397529691"
+        },
+        {
+          "file": "apps/mobile/ios/.gitignore",
+          "hash": "11829594315324166477"
+        },
+        {
+          "file": "apps/mobile/ios/Flutter/AppFrameworkInfo.plist",
+          "hash": "13272990068196912551"
+        },
+        {
+          "file": "apps/mobile/ios/Flutter/Debug.xcconfig",
+          "hash": "12761441976492340084"
+        },
+        {
+          "file": "apps/mobile/ios/Flutter/Release.xcconfig",
+          "hash": "12761441976492340084"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcodeproj/project.pbxproj",
+          "hash": "28308794090289897"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+          "hash": "7905627858604825927"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+          "hash": "12722229457274558422"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+          "hash": "11015238449633062087"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+          "hash": "3801572788241144170"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcworkspace/contents.xcworkspacedata",
+          "hash": "8566102419606845161"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+          "hash": "12722229457274558422"
+        },
+        {
+          "file": "apps/mobile/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+          "hash": "11015238449633062087"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/AppDelegate.swift",
+          "hash": "10107173367169013511"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+          "hash": "11701671655275461563"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+          "hash": "10744190497123437199"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png",
+          "hash": "17857370851071422985"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png",
+          "hash": "9089880720354936574"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png",
+          "hash": "4153981484587230721"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png",
+          "hash": "14233470423577647923"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png",
+          "hash": "4256688772913297625"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png",
+          "hash": "1725712220684977236"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png",
+          "hash": "9089880720354936574"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png",
+          "hash": "11020049274280637400"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png",
+          "hash": "15597081444621038052"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png",
+          "hash": "15597081444621038052"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png",
+          "hash": "1874192408977113223"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png",
+          "hash": "6391886343813779197"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png",
+          "hash": "14420767294843778987"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png",
+          "hash": "4764981302566026812"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json",
+          "hash": "9910583525975909610"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png",
+          "hash": "8198580046434161737"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png",
+          "hash": "8198580046434161737"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png",
+          "hash": "8198580046434161737"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
+          "hash": "1692426015314638624"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Base.lproj/LaunchScreen.storyboard",
+          "hash": "10838346425801468425"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Base.lproj/Main.storyboard",
+          "hash": "8711865626386969945"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Info.plist",
+          "hash": "7952026933938068265"
+        },
+        {
+          "file": "apps/mobile/ios/Runner/Runner-Bridging-Header.h",
+          "hash": "9345155165121591741"
+        },
+        {
+          "file": "apps/mobile/ios/RunnerTests/RunnerTests.swift",
+          "hash": "6335546013279342170"
+        },
+        {
+          "file": "apps/mobile/lib/main.dart",
+          "hash": "6274957667424320147"
+        },
+        {
+          "file": "apps/mobile/linux/.gitignore",
+          "hash": "13607721403022088914"
+        },
+        {
+          "file": "apps/mobile/linux/CMakeLists.txt",
+          "hash": "15104801468363500739"
+        },
+        {
+          "file": "apps/mobile/linux/flutter/CMakeLists.txt",
+          "hash": "12492752739666730672"
+        },
+        {
+          "file": "apps/mobile/linux/flutter/generated_plugin_registrant.cc",
+          "hash": "11372770350917308975"
+        },
+        {
+          "file": "apps/mobile/linux/flutter/generated_plugin_registrant.h",
+          "hash": "11836116085089029027"
+        },
+        {
+          "file": "apps/mobile/linux/flutter/generated_plugins.cmake",
+          "hash": "967311670984603872"
+        },
+        {
+          "file": "apps/mobile/linux/runner/CMakeLists.txt",
+          "hash": "217274425282116964"
+        },
+        {
+          "file": "apps/mobile/linux/runner/main.cc",
+          "hash": "17828417783562383438"
+        },
+        {
+          "file": "apps/mobile/linux/runner/my_application.cc",
+          "hash": "3189436652703122838"
+        },
+        {
+          "file": "apps/mobile/linux/runner/my_application.h",
+          "hash": "11219800945186825493"
+        },
+        {
+          "file": "apps/mobile/macos/.gitignore",
+          "hash": "14396950655986005485"
+        },
+        {
+          "file": "apps/mobile/macos/Flutter/Flutter-Debug.xcconfig",
+          "hash": "2715398566220117549"
+        },
+        {
+          "file": "apps/mobile/macos/Flutter/Flutter-Release.xcconfig",
+          "hash": "2715398566220117549"
+        },
+        {
+          "file": "apps/mobile/macos/Flutter/GeneratedPluginRegistrant.swift",
+          "hash": "14400164900485885773"
+        },
+        {
+          "file": "apps/mobile/macos/Runner.xcodeproj/project.pbxproj",
+          "hash": "16670942957440181778"
+        },
+        {
+          "file": "apps/mobile/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+          "hash": "12722229457274558422"
+        },
+        {
+          "file": "apps/mobile/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+          "hash": "11675309684596018595"
+        },
+        {
+          "file": "apps/mobile/macos/Runner.xcworkspace/contents.xcworkspacedata",
+          "hash": "8566102419606845161"
+        },
+        {
+          "file": "apps/mobile/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+          "hash": "12722229457274558422"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/AppDelegate.swift",
+          "hash": "3476720827429249575"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+          "hash": "17036171663311555573"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png",
+          "hash": "3771910045509164028"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png",
+          "hash": "10377708388050066887"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png",
+          "hash": "1707950882390526744"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png",
+          "hash": "14505517143401598021"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png",
+          "hash": "14241345280459365417"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png",
+          "hash": "7106691059326038311"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png",
+          "hash": "9943937238971639325"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Base.lproj/MainMenu.xib",
+          "hash": "3729473421558121038"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Configs/AppInfo.xcconfig",
+          "hash": "9616304467567468737"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Configs/Debug.xcconfig",
+          "hash": "6872917179975400800"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Configs/Release.xcconfig",
+          "hash": "4684760480374283279"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Configs/Warnings.xcconfig",
+          "hash": "4472420215832517008"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/DebugProfile.entitlements",
+          "hash": "14542972845932096995"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Info.plist",
+          "hash": "14258879426181786281"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/MainFlutterWindow.swift",
+          "hash": "14693478588522762974"
+        },
+        {
+          "file": "apps/mobile/macos/Runner/Release.entitlements",
+          "hash": "13540805899356986114"
+        },
+        {
+          "file": "apps/mobile/macos/RunnerTests/RunnerTests.swift",
+          "hash": "9861075626213018210"
+        },
+        {
+          "file": "apps/mobile/project.json",
+          "hash": "3898423514467513812"
+        },
+        {
+          "file": "apps/mobile/pubspec.lock",
+          "hash": "11602493365753325711"
+        },
+        {
+          "file": "apps/mobile/pubspec.yaml",
+          "hash": "16834005197990841455"
+        },
+        {
+          "file": "apps/mobile/test/widget_test.dart",
+          "hash": "9165889525873221568"
+        },
+        {
+          "file": "apps/mobile/web/favicon.png",
+          "hash": "12034766639833803145"
+        },
+        {
+          "file": "apps/mobile/web/icons/Icon-192.png",
+          "hash": "11127250911784749408"
+        },
+        {
+          "file": "apps/mobile/web/icons/Icon-512.png",
+          "hash": "17592935996014618579"
+        },
+        {
+          "file": "apps/mobile/web/icons/Icon-maskable-192.png",
+          "hash": "10072076373731019854"
+        },
+        {
+          "file": "apps/mobile/web/icons/Icon-maskable-512.png",
+          "hash": "12486398084247681868"
+        },
+        {
+          "file": "apps/mobile/web/index.html",
+          "hash": "2317794182688107393"
+        },
+        {
+          "file": "apps/mobile/web/manifest.json",
+          "hash": "17757905504014572229"
+        },
+        {
+          "file": "apps/mobile/windows/.gitignore",
+          "hash": "7566155848963932074"
+        },
+        {
+          "file": "apps/mobile/windows/CMakeLists.txt",
+          "hash": "12753543749884808430"
+        },
+        {
+          "file": "apps/mobile/windows/flutter/CMakeLists.txt",
+          "hash": "13590125259233765859"
+        },
+        {
+          "file": "apps/mobile/windows/flutter/generated_plugin_registrant.cc",
+          "hash": "16331922066231475089"
+        },
+        {
+          "file": "apps/mobile/windows/flutter/generated_plugin_registrant.h",
+          "hash": "1337393613388320760"
+        },
+        {
+          "file": "apps/mobile/windows/flutter/generated_plugins.cmake",
+          "hash": "17345984157924822862"
+        },
+        {
+          "file": "apps/mobile/windows/runner/CMakeLists.txt",
+          "hash": "6085762767992445798"
+        },
+        {
+          "file": "apps/mobile/windows/runner/Runner.rc",
+          "hash": "1518066825075055258"
+        },
+        {
+          "file": "apps/mobile/windows/runner/flutter_window.cpp",
+          "hash": "11004130214882527613"
+        },
+        {
+          "file": "apps/mobile/windows/runner/flutter_window.h",
+          "hash": "13610638245919779526"
+        },
+        {
+          "file": "apps/mobile/windows/runner/main.cpp",
+          "hash": "18248025560608487315"
+        },
+        {
+          "file": "apps/mobile/windows/runner/resource.h",
+          "hash": "10760531102278073285"
+        },
+        {
+          "file": "apps/mobile/windows/runner/resources/app_icon.ico",
+          "hash": "2068159416445343149"
+        },
+        {
+          "file": "apps/mobile/windows/runner/runner.exe.manifest",
+          "hash": "13981165767909391020"
+        },
+        {
+          "file": "apps/mobile/windows/runner/utils.cpp",
+          "hash": "1141693563551267442"
+        },
+        {
+          "file": "apps/mobile/windows/runner/utils.h",
+          "hash": "9808589787161233778"
+        },
+        {
+          "file": "apps/mobile/windows/runner/win32_window.cpp",
+          "hash": "13485348649417725856"
+        },
+        {
+          "file": "apps/mobile/windows/runner/win32_window.h",
+          "hash": "13808918586148889107"
+        }
+      ],
+      "api": [
+        {
+          "file": "services/api/Dockerfile",
+          "hash": "2682042163005313718"
+        },
+        {
+          "file": "services/api/app/main.py",
+          "hash": "2328716758739803481"
+        },
+        {
+          "file": "services/api/project.json",
+          "hash": "1742867188382414506"
+        },
+        {
+          "file": "services/api/requirements.txt",
+          "hash": "15497953990071651905"
+        }
+      ],
+      "admin": [
+        {
+          "file": "apps/admin/.editorconfig",
+          "hash": "4165385352547808172"
+        },
+        {
+          "file": "apps/admin/.gitignore",
+          "hash": "8735202651818384803"
+        },
+        {
+          "file": "apps/admin/.vscode/extensions.json",
+          "hash": "5331566439708925252"
+        },
+        {
+          "file": "apps/admin/.vscode/launch.json",
+          "hash": "17038929134016848735"
+        },
+        {
+          "file": "apps/admin/.vscode/tasks.json",
+          "hash": "5336636969995539451"
+        },
+        {
+          "file": "apps/admin/README.md",
+          "hash": "3528809751714344805"
+        },
+        {
+          "file": "apps/admin/angular.json",
+          "hash": "1246797227321690728"
+        },
+        {
+          "file": "apps/admin/package.json",
+          "hash": "14245662439869353102",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "apps/admin/project.json",
+          "hash": "6264886546201492828"
+        },
+        {
+          "file": "apps/admin/public/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "apps/admin/src/app/app.config.ts",
+          "hash": "2231130204567329230"
+        },
+        {
+          "file": "apps/admin/src/app/app.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/admin/src/app/app.html",
+          "hash": "10568412275475444596"
+        },
+        {
+          "file": "apps/admin/src/app/app.routes.ts",
+          "hash": "12397496131277534773"
+        },
+        {
+          "file": "apps/admin/src/app/app.spec.ts",
+          "hash": "14041523489278167953"
+        },
+        {
+          "file": "apps/admin/src/app/app.ts",
+          "hash": "11346475275133963677"
+        },
+        {
+          "file": "apps/admin/src/index.html",
+          "hash": "12495912991239783112"
+        },
+        {
+          "file": "apps/admin/src/main.ts",
+          "hash": "15944248449879998907"
+        },
+        {
+          "file": "apps/admin/src/styles.css",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/admin/tsconfig.app.json",
+          "hash": "8369321240499881643"
+        },
+        {
+          "file": "apps/admin/tsconfig.json",
+          "hash": "5656778633894759594"
+        },
+        {
+          "file": "apps/admin/tsconfig.spec.json",
+          "hash": "17063073924005338580"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "2237622095928919242"
+}

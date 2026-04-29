@@ -1,41 +1,27 @@
-# Dependencies
-node_modules/
-.npm
-.pnpm-store
-
-# Nx
-.nx/cache
-
-# Flutter
-.dart_tool/
-.packages
-.pub-cache/
-.pub/
-build/
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.venv
-venv/
-ENV/
-env/
-
-# Angular
-dist/
-.angular/
-
 # Terraform
 .terraform/
 *.tfstate
 *.tfstate.backup
 .terraform.lock.hcl
+*.tfvars
+tfplan
 
-# OS
-.DS_Store
-Thumbs.db
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
 
-# Env
-.env
-.env.local
+# Node/Angular
+node_modules/
+dist/
+.angular/
+
+# Flutter
+build/
+.dart_tool/
+.packages
+
+# GCP
+gcp-key.json
