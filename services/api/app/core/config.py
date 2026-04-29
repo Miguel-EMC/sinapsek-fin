@@ -1,8 +1,8 @@
 from pydantic_settings import BaseSettings
-from typing import List
-
+from typing import List, Optional
 
 class Settings(BaseSettings):
+
     PROJECT_NAME: str = "Sinapsek Fin"
     API_V1_STR: str = "/api/v1"
     SECRET_KEY: str = "your-default-secret-key-for-dev" # Se cargará automáticamente del entorno (inyectado por GCP)
