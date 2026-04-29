@@ -15,3 +15,4 @@ class User(Base):
     financial_profile = relationship(
         "FinancialProfile", back_populates="user", uselist=False
     )
+    transactions = relationship("Transaction", back_populates="user")

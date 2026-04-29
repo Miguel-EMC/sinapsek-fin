@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
-import 'features/auth/presentation/login_screen.dart';
+import 'core/constants/colors.dart';
+import 'features/auth/presentation/screens/login_screen.dart';
+import 'features/dashboard/presentation/screens/ui_showcase_screen.dart';
 
 void main() {
   runApp(const SinapsekApp());
@@ -15,8 +17,11 @@ class SinapsekApp extends StatelessWidget {
       title: 'Sinapsek Fin',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      initialRoute: '/login',
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      initialRoute: '/showcase',
       routes: {
+        '/showcase': (context) => const UIShowcaseScreen(),
         '/login': (context) => const LoginScreen(),
         '/dashboard': (context) => const DashboardScreen(),
       },

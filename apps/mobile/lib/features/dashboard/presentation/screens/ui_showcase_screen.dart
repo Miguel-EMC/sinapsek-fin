@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import '../core/widgets/custom_buttons.dart';
-import '../core/widgets/custom_alerts.dart';
-import '../core/widgets/balance_card.dart';
-import '../core/widgets/action_grid.dart';
-import '../core/widgets/transaction_row.dart';
+import '../../../../core/widgets/custom_buttons.dart';
+import '../../../../core/widgets/custom_alerts.dart';
+import '../../../../core/widgets/balance_card.dart';
+import '../../../../core/widgets/action_grid.dart';
+import '../../../../core/widgets/transaction_row.dart';
+import '../../../../core/widgets/custom_scaffold.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_text_field.dart';
 
 class UIShowcaseScreen extends StatelessWidget {
   const UIShowcaseScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('UI Showcase'),
+    return CustomScaffold(
+      appBar: const CustomAppBar(
+        title: 'UI Showcase',
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -64,18 +67,14 @@ class UIShowcaseScreen extends StatelessWidget {
             const SizedBox(height: 24),
             const Text('Inputs', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
             const SizedBox(height: 16),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Full Name',
-                hintText: 'Enter your name',
-              ),
+            const CustomTextField(
+              label: 'Full Name',
+              hintText: 'Enter your name',
             ),
             const SizedBox(height: 12),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Email',
-                errorText: 'Invalid email address',
-              ),
+            const CustomTextField(
+              label: 'Email',
+              errorText: 'Invalid email address',
             ),
             const SizedBox(height: 24),
             const Text('Transactions', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),

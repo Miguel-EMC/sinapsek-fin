@@ -7,3 +7,7 @@ pydantic-settings
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
+pypdf
+pandas
+openpyxl
+google-generativeai
