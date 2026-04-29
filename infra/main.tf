@@ -55,3 +55,4 @@ module "cloud_run" {
   api_sa_email  = module.iam.api_sa_email
   custom_domain = var.environment == "prod" ? "api.sinapsek-fin.migueldev11.com" : "api.demo.sinapsek-fin.migueldev11.com"
 }
+# Trigger deployment
