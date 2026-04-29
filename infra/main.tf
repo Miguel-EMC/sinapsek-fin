@@ -56,3 +56,4 @@ module "cloud_run" {
   custom_domain = var.environment == "prod" ? "api.sinapsek-fin.migueldev11.com" : "api.demo.sinapsek-fin.migueldev11.com"
 }
 # Trigger deployment
+# Final infrastructure sync
