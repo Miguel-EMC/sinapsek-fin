@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.npm
+.pnpm-store
+
+# Nx
+.nx/cache
+
+# Flutter
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+venv/
+ENV/
+env/
+
+# Angular
+dist/
+.angular/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local

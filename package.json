@@ -1,0 +1,14 @@
+{
+  "name": "sinapsek-fin",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "nx": "nx"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "nx": "latest",
+    "prettier": "^3.0.0"
+  }
+}

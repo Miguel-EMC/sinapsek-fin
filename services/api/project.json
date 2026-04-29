@@ -1,0 +1,28 @@
+{
+  "name": "api",
+  "projectType": "application",
+  "sourceRoot": "services/api",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "uvicorn app.main:app --reload",
+        "cwd": "services/api"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pytest",
+        "cwd": "services/api"
+      }
+    },
+    "migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "alembic upgrade head",
+        "cwd": "services/api"
+      }
+    }
+  }
+}
