@@ -67,12 +67,3 @@ jobs:
           gcloud builds submit \
             --tag us-central1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/api-${{ env.ENV }}:${{ github.sha }} \
             services/api/
-
-      - name: Deploy to Cloud Run
-        run: |-
-          gcloud run deploy ${{ env.SERVICE_NAME }} \
-            --image us-central1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/api-${{ env.ENV }}:${{ github.sha }} \
-            --region ${{ env.REGION }} \
-            --platform managed \
-            --allow-unauthenticated \
-            --add-cloudsql-instances ${{ steps.auth.outputs.project_id }}:${{ env.REGION }}:sinapsek-fin-${{ env.ENV }}
