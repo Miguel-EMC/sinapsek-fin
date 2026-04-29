@@ -7,5 +7,19 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/api-repo/api:$SHORT_SHA']
 
+  # Run Database Migrations
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        docker run --network=cloudbuild us-central1-docker.pkg.dev/$PROJECT_ID/api-repo/api:$SHORT_SHA \
+        alembic upgrade head
+    env:
+      - 'DATABASE_URL=${_DATABASE_URL}'
+
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/api-repo/api:$SHORT_SHA'
+
+substitutions:
+  _DATABASE_URL: 'postgresql+psycopg2://app_user:PASSWORD@/sinapsek_fin?host=/cloudsql/PROJECT_ID:REGION:INSTANCE'

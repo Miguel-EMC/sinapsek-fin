@@ -98,9 +98,34 @@ resource "google_cloud_run_service" "api" {
   }
 }
 
+resource "google_cloud_run_domain_mapping" "api" {
+  location = var.region
+  name     = var.custom_domain
+
+  metadata {
+    namespace = var.project_id
+  }
+
+  spec {
+    route_name = google_cloud_run_service.api.name
+  }
+}
+
 resource "google_cloud_run_service_iam_member" "public" {
   service  = google_cloud_run_service.api.name
   location = google_cloud_run_service.api.location
   role     = "roles/run.invoker"
   member   = "allUsers"
+}
+
+output "api_url" {
+  value = google_cloud_run_service.api.status[0].url
+}
+
+output "api_sa_email" {
+  value = var.api_sa_email
+}
+
+output "dns_records" {
+  value = google_cloud_run_domain_mapping.api.status[0].resource_records
 }

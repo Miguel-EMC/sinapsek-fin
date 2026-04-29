@@ -53,4 +53,5 @@ module "cloud_run" {
   db_connection = module.cloud_sql.connection_name
   db_password   = module.cloud_sql.db_password
   api_sa_email  = module.iam.api_sa_email
+  custom_domain = var.environment == "prod" ? "api.sinapsek-fin.migueldev11.com" : "api.demo.sinapsek-fin.migueldev11.com"
 }

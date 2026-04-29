@@ -74,4 +74,5 @@ jobs:
             --image us-central1-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/api-${{ env.ENV }}:${{ github.sha }} \
             --region ${{ env.REGION }} \
             --platform managed \
-            --allow-unauthenticated
+            --allow-unauthenticated \
+            --add-cloudsql-instances ${{ steps.auth.outputs.project_id }}:${{ env.REGION }}:sinapsek-fin-${{ env.ENV }}

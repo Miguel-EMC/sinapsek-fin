@@ -1,8 +1,9 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, UUID4
 from typing import Optional
 
 class UserBase(BaseModel):
     email: Optional[EmailStr] = None
+    is_active: Optional[bool] = True
     full_name: Optional[str] = None
 
 class UserCreate(UserBase):
@@ -10,8 +11,7 @@ class UserCreate(UserBase):
     password: str
 
 class User(UserBase):
-    id: int
-    is_active: bool
+    id: UUID4
 
     class Config:
         from_attributes = True
