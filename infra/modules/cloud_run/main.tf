@@ -84,8 +84,6 @@ resource "google_cloud_run_service" "api" {
             memory = "512Mi"
           }
         }
-
-        logging = "CLOUD_LOGGING"
       }
     }
 
@@ -96,11 +94,6 @@ resource "google_cloud_run_service" "api" {
         "autoscaling.knative.dev/minScale"      = "0"
       }
     }
-  }
-
-  labels = {
-    environment = var.environment
-    app         = "sinapsek-api"
   }
 
   traffic {
@@ -129,12 +122,12 @@ resource "google_cloud_run_service_iam_member" "public" {
   member   = "allUsers"
 }
 
-resource "google_cloud_run_job" "migrate" {
+resource "google_cloud_run_v2_job" "migrate" {
   name     = "migrate-${var.environment}"
   location = var.region
 
   template {
-    spec {
+    template {
       service_account_name = var.api_sa_email
 
       containers {
@@ -165,6 +158,13 @@ resource "google_cloud_run_job" "migrate" {
 
         command = ["alembic", "upgrade", "head"]
       }
+
+      resources {
+        limits = {
+          cpu    = "1"
+          memory = "512Mi"
+        }
+      }
     }
   }
 
@@ -172,6 +172,12 @@ resource "google_cloud_run_job" "migrate" {
     environment = var.environment
     app         = "sinapsek-api"
   }
+}
+
+resource "google_cloud_run_v2_job_execution" "migrate" {
+  name    = "migrate-${var.environment}-${formatdate("YYYYMMDD", timestamp())}"
+  job    = google_cloud_run_v2_job.migrate.name
+  location = var.region
 }
 
 output "api_url" {
