@@ -4,10 +4,12 @@ terraform {
     google = { source = "hashicorp/google", version = "~> 5.0" }
     random = { source = "hashicorp/random", version = "~> 3.5" }
   }
-  # Backend configured via -backend-config flag:
+  # Prefix is set per-environment via -backend-config flag:
   #   terraform init -backend-config=demo.tfbackend
   #   terraform init -backend-config=prod.tfbackend
-  backend "gcs" {}
+  backend "gcs" {
+    bucket = "sinapsek-fin-tfstate"
+  }
 }
 
 provider "google" {
