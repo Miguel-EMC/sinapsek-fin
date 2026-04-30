@@ -26,6 +26,27 @@ jobs:
         working-directory: services/api
         run: ruff check .
 
+  api-test:
+    name: API Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: services/api/pyproject.toml
+
+      - name: Install dependencies
+        working-directory: services/api
+        run: pip install -e ".[test]"
+
+      - name: Run tests
+        working-directory: services/api
+        run: pytest
+
   mobile-checks:
     name: Mobile Checks
     runs-on: ubuntu-latest
@@ -48,3 +69,24 @@ jobs:
       - name: Test
         working-directory: apps/mobile
         run: flutter test
+
+  admin-lint:
+    name: Admin Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: npm
+          cache-dependency-path: apps/admin/package-lock.json
+
+      - name: Install dependencies
+        working-directory: apps/admin
+        run: npm ci
+
+      - name: Lint
+        working-directory: apps/admin
+        run: npm run lint
