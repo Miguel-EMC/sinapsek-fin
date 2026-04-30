@@ -10,7 +10,6 @@ on:
 env:
   PROJECT_ID: sinapsek-fin
   REGION: us-central1
-  TF_STATE_BUCKET: sinapsek-fin-tfstate
 
 concurrency:
   group: deploy-${{ github.ref }}
@@ -81,10 +80,7 @@ jobs:
 
       - name: Terraform init
         working-directory: infra
-        run: |
-          terraform init \
-            -backend-config="bucket=${{ env.TF_STATE_BUCKET }}" \
-            -backend-config="prefix=${{ needs.resolve-environment.outputs.deploy_env }}"
+        run: terraform init -backend-config="${{ needs.resolve-environment.outputs.deploy_env }}.tfbackend"
 
       - name: Create Artifact Registry if missing
         working-directory: infra
@@ -137,10 +133,7 @@ jobs:
 
       - name: Terraform init
         working-directory: infra
-        run: |
-          terraform init \
-            -backend-config="bucket=${{ env.TF_STATE_BUCKET }}" \
-            -backend-config="prefix=${{ needs.resolve-environment.outputs.deploy_env }}"
+        run: terraform init -backend-config="${{ needs.resolve-environment.outputs.deploy_env }}.tfbackend"
 
       - name: Terraform validate
         working-directory: infra

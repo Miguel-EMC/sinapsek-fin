@@ -4,10 +4,10 @@ terraform {
     google = { source = "hashicorp/google", version = "~> 5.0" }
     random = { source = "hashicorp/random", version = "~> 3.5" }
   }
-  backend "gcs" {
-    bucket = "sinapsek-fin-tfstate"
-    prefix = "prod"
-  }
+  # Backend configured via -backend-config flag:
+  #   terraform init -backend-config=demo.tfbackend
+  #   terraform init -backend-config=prod.tfbackend
+  backend "gcs" {}
 }
 
 provider "google" {
