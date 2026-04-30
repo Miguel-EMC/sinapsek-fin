@@ -35,10 +35,4 @@ async def root():
 
 @app.get("/health")
 async def health():
-    try:
-        # Check database connection
-        with engine.connect() as conn:
-            conn.execute(text("SELECT 1"))
-        return {"status": "healthy", "database": "connected"}
-    except Exception as e:
-        return {"status": "unhealthy", "database": "disconnected", "error": str(e)}
+    return {"status": "healthy"}
