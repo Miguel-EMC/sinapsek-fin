@@ -73,6 +73,10 @@ resource "google_cloud_run_service" "api" {
           name  = "CORS_ORIGINS"
           value = "https://*.sinapsek.com,https://admin.sinapsek.com"
         }
+        env {
+          name  = "LOG_LEVEL"
+          value = "INFO"
+        }
 
         resources {
           limits = {
@@ -80,6 +84,8 @@ resource "google_cloud_run_service" "api" {
             memory = "512Mi"
           }
         }
+
+        logging = "CLOUD_LOGGING"
       }
     }
 
@@ -90,6 +96,11 @@ resource "google_cloud_run_service" "api" {
         "autoscaling.knative.dev/minScale"      = "0"
       }
     }
+  }
+
+  labels = {
+    environment = var.environment
+    app         = "sinapsek-api"
   }
 
   traffic {
@@ -116,6 +127,51 @@ resource "google_cloud_run_service_iam_member" "public" {
   location = google_cloud_run_service.api.location
   role     = "roles/run.invoker"
   member   = "allUsers"
+}
+
+resource "google_cloud_run_job" "migrate" {
+  name     = "migrate-${var.environment}"
+  location = var.region
+
+  template {
+    spec {
+      service_account_name = var.api_sa_email
+
+      containers {
+        image = var.api_image_url
+
+        env {
+          name = "DATABASE_URL"
+          value_from {
+            secret_key_ref {
+              name = google_secret_manager_secret.db_url.secret_id
+              key  = "latest"
+            }
+          }
+        }
+        env {
+          name  = "ENVIRONMENT"
+          value = var.environment
+        }
+        env {
+          name = "SECRET_KEY"
+          value_from {
+            secret_key_ref {
+              name = google_secret_manager_secret.app_secret_key.secret_id
+              key  = "latest"
+            }
+          }
+        }
+
+        command = ["alembic", "upgrade", "head"]
+      }
+    }
+  }
+
+  labels = {
+    environment = var.environment
+    app         = "sinapsek-api"
+  }
 }
 
 output "api_url" {

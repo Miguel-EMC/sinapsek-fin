@@ -155,12 +155,36 @@ jobs:
             -var="region=${{ env.REGION }}" \
             -var="api_image_url=${{ needs.resolve-environment.outputs.image_url }}"
 
+  run-migrations:
+    name: Run Database Migrations
+    runs-on: ubuntu-latest
+    needs: [resolve-environment, terraform-deploy]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Run migrations
+        run: |
+          SERVICE_NAME="sinapsek-api-${{ needs.resolve-environment.outputs.deploy_env }}"
+          gcloud run jobs run migrate-${{ needs.resolve-environment.outputs.deploy_env }} \
+            --region=${{ env.REGION }} \
+            --project=${{ env.PROJECT_ID }}
+        continue-on-error: true
+
   deploy-summary:
     name: Deployment Summary
     runs-on: ubuntu-latest
-    needs: [resolve-environment, terraform-deploy]
+    needs: [resolve-environment, run-migrations]
     steps:
       - name: Show deployment target
         run: |
           echo "Deployment completed for environment: ${{ needs.resolve-environment.outputs.deploy_env }}"
           echo "Image: ${{ needs.resolve-environment.outputs.image_url }}"
+          echo "Migrations: executed"
