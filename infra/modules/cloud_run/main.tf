@@ -122,64 +122,6 @@ resource "google_cloud_run_service_iam_member" "public" {
   member   = "allUsers"
 }
 
-resource "google_cloud_run_v2_job" "migrate" {
-  name     = "migrate-${var.environment}"
-  location = var.region
-
-  template {
-    template {
-      service_account_name = var.api_sa_email
-
-      containers {
-        image = var.api_image_url
-
-        env {
-          name = "DATABASE_URL"
-          value_from {
-            secret_key_ref {
-              name = google_secret_manager_secret.db_url.secret_id
-              key  = "latest"
-            }
-          }
-        }
-        env {
-          name  = "ENVIRONMENT"
-          value = var.environment
-        }
-        env {
-          name = "SECRET_KEY"
-          value_from {
-            secret_key_ref {
-              name = google_secret_manager_secret.app_secret_key.secret_id
-              key  = "latest"
-            }
-          }
-        }
-
-        command = ["alembic", "upgrade", "head"]
-      }
-
-      resources {
-        limits = {
-          cpu    = "1"
-          memory = "512Mi"
-        }
-      }
-    }
-  }
-
-  labels = {
-    environment = var.environment
-    app         = "sinapsek-api"
-  }
-}
-
-resource "google_cloud_run_v2_job_execution" "migrate" {
-  name    = "migrate-${var.environment}-${formatdate("YYYYMMDD", timestamp())}"
-  job    = google_cloud_run_v2_job.migrate.name
-  location = var.region
-}
-
 output "api_url" {
   value = google_cloud_run_service.api.status[0].url
 }
