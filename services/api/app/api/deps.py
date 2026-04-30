@@ -4,10 +4,10 @@ from fastapi.security import OAuth2PasswordBearer
 from jose import jwt
 from pydantic import ValidationError
 from sqlalchemy.orm import Session
-from ...core import security
-from ...core.config import settings
-from ...core.db.session import SessionLocal
-from ...models.user import User
+from app.core import security
+from app.core.config import settings
+from app.core.db.session import SessionLocal
+from app.models.user import User
 
 reusable_oauth2 = OAuth2PasswordBearer(
     tokenUrl=f"{settings.API_V1_STR}/auth/login"

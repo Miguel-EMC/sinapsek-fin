@@ -1,4 +1,4 @@
-.PHONY: dev build test deploy migrate
+.PHONY: dev build test migrate deploy deploy-demo deploy-prod
 
 dev:
 	docker-compose up
@@ -10,7 +10,13 @@ test:
 	npx nx run-many -t test
 
 migrate:
-	npx nx run api:migrate
+	docker-compose run api alembic upgrade head
 
 deploy:
 	npx nx run-many -t deploy
+
+deploy-demo:
+	gh workflow run deploy-terraform.yml -f ref=demo
+
+deploy-prod:
+	gh workflow run deploy-terraform.yml -f ref=main

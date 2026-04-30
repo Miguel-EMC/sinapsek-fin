@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import Any
-from ....api import deps
-from ....models.user import User
-from ....models.profile import FinancialProfile
-from ....schemas.profile import (
+from app.api import deps
+from app.models.user import User
+from app.models.profile import FinancialProfile
+from app.schemas.profile import (
     FinancialProfile as FinancialProfileSchema,
     FinancialProfileCreate,
     FinancialProfileUpdate,

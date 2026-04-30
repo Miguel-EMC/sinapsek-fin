@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 from typing import List, Any
-from ....api import deps
-from ....models.user import User
-from ....models.transaction import Transaction
-from ....core.parser import parser
-from ....schemas.transaction import Transaction as TransactionSchema
+from app.api import deps
+from app.models.user import User
+from app.models.transaction import Transaction
+from app.core.parser import parser
+from app.schemas.transaction import Transaction as TransactionSchema
 from datetime import datetime
 
 router = APIRouter()
