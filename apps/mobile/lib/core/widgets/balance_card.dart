@@ -47,7 +47,7 @@ class BalanceCard extends StatelessWidget {
             Text(
               subtitle!,
               style: TextStyle(
-                color: const Color(0xFF1B4D42).withOpacity(0.7),
+                color: const Color(0xFF1B4D42).withValues(alpha: 0.7),
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
               ),

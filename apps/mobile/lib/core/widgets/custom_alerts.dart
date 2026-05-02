@@ -35,7 +35,7 @@ class CustomAlerts {
           decoration: BoxDecoration(
             color: backgroundColor,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: indicatorColor.withOpacity(0.1)),
+            border: Border.all(color: indicatorColor.withValues(alpha: 0.1)),
           ),
           child: Row(
             children: [

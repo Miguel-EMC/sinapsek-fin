@@ -14,11 +14,9 @@ class AppTheme {
         onPrimary: AppColors.textPrimaryLight,
         primaryContainer: AppColors.primaryContainer,
         secondary: AppColors.primaryDark,
-        surface: AppColors.surfaceLight,
-        background: AppColors.backgroundLight,
+        surface: AppColors.backgroundLight,
         error: AppColors.error,
         onSurface: AppColors.textPrimaryLight,
-        onBackground: AppColors.textPrimaryLight,
       ),
       scaffoldBackgroundColor: AppColors.backgroundLight,
       textTheme: AppTypography.textTheme(AppColors.textPrimaryLight),
@@ -78,7 +76,7 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
       ),
       
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.surfaceLight,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -97,11 +95,9 @@ class AppTheme {
         onPrimary: AppColors.backgroundDark,
         primaryContainer: AppColors.primaryDark,
         secondary: AppColors.primary,
-        surface: AppColors.surfaceDark,
-        background: AppColors.backgroundDark,
+        surface: AppColors.backgroundDark,
         error: AppColors.error,
         onSurface: AppColors.textPrimaryDark,
-        onBackground: AppColors.textPrimaryDark,
       ),
       scaffoldBackgroundColor: AppColors.backgroundDark,
       textTheme: AppTypography.textTheme(AppColors.textPrimaryDark),
@@ -159,7 +155,7 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
       ),
       
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.surfaceDark,
         elevation: 0,
         shape: RoundedRectangleBorder(

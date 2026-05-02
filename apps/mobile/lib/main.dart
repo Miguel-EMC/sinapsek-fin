@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
 import 'core/constants/colors.dart';
+import 'core/services/auth_service.dart';
 import 'features/auth/presentation/screens/login_screen.dart';
 import 'features/dashboard/presentation/screens/ui_showcase_screen.dart';
 
-void main() {
-  runApp(const SinapsekApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final loggedIn = await AuthService.isLoggedIn();
+  runApp(SinapsekApp(initialRoute: loggedIn ? '/dashboard' : '/login'));
 }
 
 class SinapsekApp extends StatelessWidget {
-  const SinapsekApp({super.key});
+  final String initialRoute;
+  const SinapsekApp({super.key, required this.initialRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class SinapsekApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      initialRoute: '/showcase',
+      initialRoute: initialRoute,
       routes: {
         '/showcase': (context) => const UIShowcaseScreen(),
         '/login': (context) => const LoginScreen(),
@@ -60,7 +64,7 @@ class DashboardScreen extends StatelessWidget {
             Text(
               'Bienvenido a Sinapsek',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: AppColors.secondary,
+                    color: AppColors.primaryDark,
                     fontWeight: FontWeight.bold,
                   ),
             ),

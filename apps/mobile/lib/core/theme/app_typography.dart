@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../constants/colors.dart';
 
 class AppTypography {
   static TextTheme textTheme(Color textColor) {
@@ -48,7 +47,7 @@ class AppTypography {
       bodySmall: GoogleFonts.plusJakartaSans(
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        color: textColor.withOpacity(0.7),
+        color: textColor.withValues(alpha: 0.7),
       ),
     );
   }
